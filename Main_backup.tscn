@@ -1,0 +1,273 @@
+[gd_scene load_steps=3 format=3 uid="uid://c52dxdxhx85xo"]
+
+[ext_resource type="Theme" uid="uid://d3owjx3q3bhpj" path="res://ui/theme.tres" id="1_7v8nu"]
+[ext_resource type="Script" path="res://scenes/Main.gd" id="2_k8j4k"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource("1_7v8nu")
+script = ExtResource("2_k8j4k")
+metadata/_edit_use_anchors_ = true
+
+[node name="UI" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="TopMenuBar" type="VBoxContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 96.0
+size_flags_horizontal = 3
+
+[node name="TopRow" type="HBoxContainer" parent="UI/TopMenuBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HomeButton" type="Button" parent="UI/TopMenuBar/TopRow"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+text = "🏠"
+
+[node name="FontMinusButton" type="Button" parent="UI/TopMenuBar/TopRow"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+text = "A-"
+
+[node name="FontPlusButton" type="Button" parent="UI/TopMenuBar/TopRow"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+text = "A+"
+
+[node name="Spacer" type="Control" parent="UI/TopMenuBar/TopRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MenuButton" type="Button" parent="UI/TopMenuBar/TopRow"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+text = "☰"
+
+[node name="BottomRow" type="HBoxContainer" parent="UI/TopMenuBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LightThemeButton" type="Button" parent="UI/TopMenuBar/BottomRow"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+text = "☀"
+
+[node name="DarkThemeButton" type="Button" parent="UI/TopMenuBar/BottomRow"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+text = "🌙"
+
+[node name="HighContrastThemeButton" type="Button" parent="UI/TopMenuBar/BottomRow"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+text = "⚫"
+
+[node name="TTSSpacer" type="Control" parent="UI/TopMenuBar/BottomRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TTSPlayButton" type="Button" parent="UI/TopMenuBar/BottomRow"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+text = "▶"
+
+[node name="TTSPauseButton" type="Button" parent="UI/TopMenuBar/BottomRow"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+text = "⏸"
+
+[node name="TTSStopButton" type="Button" parent="UI/TopMenuBar/BottomRow"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+text = "⏹"
+
+[node name="TTSSpeedOption" type="OptionButton" parent="UI/TopMenuBar/BottomRow"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="PanelContainer" type="PanelContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 96.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/PanelContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/PanelContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 12
+
+[node name="Reader" type="RichTextLabel" parent="UI/PanelContainer/ScrollContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "[center][color=gray]Importa archivos Markdown para comenzar[/color][/center]"
+fit_content = true
+
+[node name="WelcomeScreen" type="Control" parent="."]
+visible = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="PanelContainer" type="PanelContainer" parent="WelcomeScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -280.0
+offset_right = 200.0
+offset_bottom = 280.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WelcomeScreen/PanelContainer"]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="WelcomeScreen/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Lector Markdown"
+horizontal_alignment = 1
+
+[node name="DescriptionLabel" type="Label" parent="WelcomeScreen/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Selecciona una opción para comenzar"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="WelcomeScreen/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ThemeLabel" type="Label" parent="WelcomeScreen/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "🎨 Temas:"
+horizontal_alignment = 1
+
+[node name="LightThemeButton" type="Button" parent="WelcomeScreen/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "☀️ Tema Claro"
+
+[node name="DarkThemeButton" type="Button" parent="WelcomeScreen/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "🌙 Tema Oscuro"
+
+[node name="HighContrastButton" type="Button" parent="WelcomeScreen/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "⚡ Alto Contraste"
+
+[node name="HSeparator2" type="HSeparator" parent="WelcomeScreen/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ImportButton" type="Button" parent="WelcomeScreen/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "📁 Importar Archivos Markdown"
+
+[node name="SettingsButton" type="Button" parent="WelcomeScreen/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "⚙️ Configuración"
+
+[node name="AboutButton" type="Button" parent="WelcomeScreen/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "ℹ️ Acerca de"
+
+[node name="ExitButton" type="Button" parent="WelcomeScreen/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "❌ Salir"
+
+[node name="FileDialog" type="FileDialog" parent="."]
+initial_position = 2
+size = Vector2i(800, 600)
+ok_button_text = "Importar"
+file_mode = 1
+access = 2
+
+[node name="SettingsDialog" type="AcceptDialog" parent="."]
+initial_position = 2
+size = Vector2i(400, 300)
+title = "Configuración"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsDialog"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -49.0
+
+[node name="FontSizeLabel" type="Label" parent="SettingsDialog/VBoxContainer"]
+layout_mode = 2
+text = "Tamaño de fuente:"
+
+[node name="FontSizeSlider" type="HSlider" parent="SettingsDialog/VBoxContainer"]
+layout_mode = 2
+min_value = 12.0
+max_value = 32.0
+step = 1.0
+value = 16.0
+
+[node name="FontSizeValue" type="Label" parent="SettingsDialog/VBoxContainer"]
+layout_mode = 2
+text = "16pt"
+horizontal_alignment = 1
+
+[node name="ThemeLabel" type="Label" parent="SettingsDialog/VBoxContainer"]
+layout_mode = 2
+text = "Tema:"
+
+[node name="ThemeOption" type="OptionButton" parent="SettingsDialog/VBoxContainer"]
+layout_mode = 2
+
+[connection signal="pressed" from="UI/TopMenuBar/TopRow/HomeButton" to="." method="_on_home_button_pressed"]
+[connection signal="pressed" from="UI/TopMenuBar/TopRow/FontMinusButton" to="." method="_on_font_minus_button_pressed"]
+[connection signal="pressed" from="UI/TopMenuBar/TopRow/FontPlusButton" to="." method="_on_font_plus_button_pressed"]
+[connection signal="pressed" from="UI/TopMenuBar/TopRow/MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="UI/TopMenuBar/BottomRow/LightThemeButton" to="." method="_on_light_theme_button_pressed"]
+[connection signal="pressed" from="UI/TopMenuBar/BottomRow/DarkThemeButton" to="." method="_on_dark_theme_button_pressed"]
+[connection signal="pressed" from="UI/TopMenuBar/BottomRow/HighContrastThemeButton" to="." method="_on_contrast_theme_button_pressed"]
+[connection signal="pressed" from="UI/TopMenuBar/BottomRow/TTSPlayButton" to="." method="_on_tts_play_button_pressed"]
+[connection signal="pressed" from="UI/TopMenuBar/BottomRow/TTSPauseButton" to="." method="_on_tts_pause_button_pressed"]
+[connection signal="pressed" from="UI/TopMenuBar/BottomRow/TTSStopButton" to="." method="_on_tts_stop_button_pressed"]
+[connection signal="item_selected" from="UI/TopMenuBar/BottomRow/TTSSpeedOption" to="." method="_on_speed_option_item_selected"]
+[connection signal="pressed" from="WelcomeScreen/PanelContainer/VBoxContainer/LightThemeButton" to="." method="_on_light_theme_button_pressed"]
+[connection signal="pressed" from="WelcomeScreen/PanelContainer/VBoxContainer/DarkThemeButton" to="." method="_on_dark_theme_button_pressed"]
+[connection signal="pressed" from="WelcomeScreen/PanelContainer/VBoxContainer/HighContrastButton" to="." method="_on_contrast_theme_button_pressed"]
+[connection signal="pressed" from="WelcomeScreen/PanelContainer/VBoxContainer/ImportButton" to="." method="_on_import_button_pressed"]
+[connection signal="pressed" from="WelcomeScreen/PanelContainer/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="WelcomeScreen/PanelContainer/VBoxContainer/AboutButton" to="." method="_on_about_button_pressed"]
+[connection signal="pressed" from="WelcomeScreen/PanelContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="files_selected" from="FileDialog" to="." method="_on_file_dialog_files_selected"]
+[connection signal="value_changed" from="SettingsDialog/VBoxContainer/FontSizeSlider" to="." method="_on_font_size_slider_value_changed"]
+[connection signal="item_selected" from="SettingsDialog/VBoxContainer/ThemeOption" to="." method="_on_theme_option_item_selected"]

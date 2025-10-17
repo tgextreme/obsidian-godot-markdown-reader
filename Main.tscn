@@ -142,6 +142,28 @@ custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="TTSContainer" type="HBoxContainer" parent="UI/VBoxContainer/TopBar"]
+layout_mode = 2
+
+[node name="TTSPlayButton" type="Button" parent="UI/VBoxContainer/TopBar/TTSContainer"]
+layout_mode = 2
+text = "▶️"
+custom_minimum_size = Vector2(40, 0)
+
+[node name="TTSPauseButton" type="Button" parent="UI/VBoxContainer/TopBar/TTSContainer"]
+layout_mode = 2
+text = "⏸️"
+custom_minimum_size = Vector2(40, 0)
+
+[node name="TTSStopButton" type="Button" parent="UI/VBoxContainer/TopBar/TTSContainer"]
+layout_mode = 2
+text = "⏹️"
+custom_minimum_size = Vector2(40, 0)
+
+[node name="TTSSpeedOption" type="OptionButton" parent="UI/VBoxContainer/TopBar/TTSContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(80, 0)
+
 [node name="TitleLabel" type="Label" parent="UI/VBoxContainer/TopBar"]
 layout_mode = 2
 text = "MDReader"
@@ -188,4 +210,8 @@ access = 2
 [connection signal="pressed" from="UI/VBoxContainer/TopBar/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer/TopBar/FontMinusButton" to="." method="_on_font_minus_button_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer/TopBar/FontPlusButton" to="." method="_on_font_plus_button_pressed"]
+[connection signal="pressed" from="UI/VBoxContainer/TopBar/TTSContainer/TTSPlayButton" to="." method="_on_tts_play_button_pressed"]
+[connection signal="pressed" from="UI/VBoxContainer/TopBar/TTSContainer/TTSPauseButton" to="." method="_on_tts_pause_button_pressed"]
+[connection signal="pressed" from="UI/VBoxContainer/TopBar/TTSContainer/TTSStopButton" to="." method="_on_tts_stop_button_pressed"]
+[connection signal="item_selected" from="UI/VBoxContainer/TopBar/TTSContainer/TTSSpeedOption" to="." method="_on_tts_speed_option_item_selected"]
 [connection signal="files_selected" from="FileDialog" to="." method="_on_file_dialog_files_selected"]

@@ -1,0 +1,217 @@
+[gd_scene load_steps=2 format=3 uid="uid://c52dxdxhx85xo"]
+
+[ext_resource type="Script" path="res://scenes/Main.gd" id="1_abc123"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_abc123")
+
+[node name="WelcomeScreen" type="Control" parent="."]
+visible = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="WelcomeScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.15, 0.15, 0.2, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="WelcomeScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="PanelContainer" type="PanelContainer" parent="WelcomeScreen/CenterContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(400, 500)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WelcomeScreen/CenterContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="WelcomeScreen/CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WelcomeScreen/CenterContainer/PanelContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="WelcomeScreen/CenterContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "📖 MDReader"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 28
+
+[node name="SubtitleLabel" type="Label" parent="WelcomeScreen/CenterContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Lector de Archivos Markdown"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 16
+
+[node name="HSeparator" type="HSeparator" parent="WelcomeScreen/CenterContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ImportButton" type="Button" parent="WelcomeScreen/CenterContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "📁 Importar Archivos Markdown"
+custom_minimum_size = Vector2(0, 50)
+
+[node name="HSeparator2" type="HSeparator" parent="WelcomeScreen/CenterContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ThemeLabel" type="Label" parent="WelcomeScreen/CenterContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "🎨 Temas:"
+horizontal_alignment = 1
+
+[node name="ThemeContainer" type="HBoxContainer" parent="WelcomeScreen/CenterContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="LightThemeButton" type="Button" parent="WelcomeScreen/CenterContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/ThemeContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "☀️ Claro"
+
+[node name="DarkThemeButton" type="Button" parent="WelcomeScreen/CenterContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/ThemeContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "🌙 Oscuro"
+
+[node name="ContrastButton" type="Button" parent="WelcomeScreen/CenterContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/ThemeContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "⚡ Contraste"
+
+[node name="HSeparator3" type="HSeparator" parent="WelcomeScreen/CenterContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="SettingsButton" type="Button" parent="WelcomeScreen/CenterContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "⚙️ Configuración"
+
+[node name="AboutButton" type="Button" parent="WelcomeScreen/CenterContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "ℹ️ Acerca de"
+
+[node name="ExitButton" type="Button" parent="WelcomeScreen/CenterContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "❌ Salir"
+
+[node name="UI" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="TopBar" type="HBoxContainer" parent="UI/VBoxContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 50)
+
+[node name="BackButton" type="Button" parent="UI/VBoxContainer/TopBar"]
+layout_mode = 2
+text = "🏠 Inicio"
+
+[node name="FontMinusButton" type="Button" parent="UI/VBoxContainer/TopBar"]
+layout_mode = 2
+text = "A-"
+custom_minimum_size = Vector2(40, 0)
+
+[node name="FontPlusButton" type="Button" parent="UI/VBoxContainer/TopBar"]
+layout_mode = 2
+text = "A+"
+custom_minimum_size = Vector2(40, 0)
+
+[node name="Spacer" type="Control" parent="UI/VBoxContainer/TopBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TTSContainer" type="HBoxContainer" parent="UI/VBoxContainer/TopBar"]
+layout_mode = 2
+
+[node name="TTSPlayButton" type="Button" parent="UI/VBoxContainer/TopBar/TTSContainer"]
+layout_mode = 2
+text = "▶️"
+custom_minimum_size = Vector2(40, 0)
+
+[node name="TTSPauseButton" type="Button" parent="UI/VBoxContainer/TopBar/TTSContainer"]
+layout_mode = 2
+text = "⏸️"
+custom_minimum_size = Vector2(40, 0)
+
+[node name="TTSStopButton" type="Button" parent="UI/VBoxContainer/TopBar/TTSContainer"]
+layout_mode = 2
+text = "⏹️"
+custom_minimum_size = Vector2(40, 0)
+
+[node name="TTSSpeedOption" type="OptionButton" parent="UI/VBoxContainer/TopBar/TTSContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(80, 0)
+
+[node name="TitleLabel" type="Label" parent="UI/VBoxContainer/TopBar"]
+layout_mode = 2
+text = "MDReader"
+vertical_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="UI/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/VBoxContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/VBoxContainer/PanelContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Reader" type="RichTextLabel" parent="UI/VBoxContainer/PanelContainer/ScrollContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "Contenido del archivo aparecerá aquí..."
+
+[node name="FileDialog" type="FileDialog" parent="."]
+title = "Seleccionar archivos Markdown"
+initial_position = 2
+size = Vector2i(700, 500)
+ok_button_text = "Abrir"
+file_mode = 1
+access = 2
+
+[connection signal="pressed" from="WelcomeScreen/CenterContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/ImportButton" to="." method="_on_import_button_pressed"]
+[connection signal="pressed" from="WelcomeScreen/CenterContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/ThemeContainer/LightThemeButton" to="." method="_on_light_theme_button_pressed"]
+[connection signal="pressed" from="WelcomeScreen/CenterContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/ThemeContainer/DarkThemeButton" to="." method="_on_dark_theme_button_pressed"]
+[connection signal="pressed" from="WelcomeScreen/CenterContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/ThemeContainer/ContrastButton" to="." method="_on_contrast_theme_button_pressed"]
+[connection signal="pressed" from="WelcomeScreen/CenterContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="WelcomeScreen/CenterContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/AboutButton" to="." method="_on_about_button_pressed"]
+[connection signal="pressed" from="WelcomeScreen/CenterContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="UI/VBoxContainer/TopBar/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="UI/VBoxContainer/TopBar/FontMinusButton" to="." method="_on_font_minus_button_pressed"]
+[connection signal="pressed" from="UI/VBoxContainer/TopBar/FontPlusButton" to="." method="_on_font_plus_button_pressed"]
+[connection signal="pressed" from="UI/VBoxContainer/TopBar/TTSContainer/TTSPlayButton" to="." method="_on_tts_play_button_pressed"]
+[connection signal="pressed" from="UI/VBoxContainer/TopBar/TTSContainer/TTSPauseButton" to="." method="_on_tts_pause_button_pressed"]
+[connection signal="pressed" from="UI/VBoxContainer/TopBar/TTSContainer/TTSStopButton" to="." method="_on_tts_stop_button_pressed"]
+[connection signal="item_selected" from="UI/VBoxContainer/TopBar/TTSContainer/TTSSpeedOption" to="." method="_on_tts_speed_option_item_selected"]
+[connection signal="files_selected" from="FileDialog" to="." method="_on_file_dialog_files_selected"]

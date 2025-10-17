@@ -1,0 +1,97 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6dqsd6ykwqw7"]
+
+[ext_resource type="Script" path="res://scenes/Main.gd" id="2_k8j4k"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("2_k8j4k")
+
+[node name="WelcomeScreen" type="Control" parent="."]
+visible = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="WelcomeScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.2, 0.2, 0.3, 1)
+
+[node name="PanelContainer" type="PanelContainer" parent="WelcomeScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -280.0
+offset_right = 200.0
+offset_bottom = 280.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WelcomeScreen/PanelContainer"]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="WelcomeScreen/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "MDReader - Lector de Markdown"
+horizontal_alignment = 1
+
+[node name="DescriptionLabel" type="Label" parent="WelcomeScreen/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Versión de prueba - 800x600"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="WelcomeScreen/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ThemeLabel" type="Label" parent="WelcomeScreen/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "🎨 Temas:"
+horizontal_alignment = 1
+
+[node name="LightThemeButton" type="Button" parent="WelcomeScreen/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "☀️ Tema Claro"
+
+[node name="DarkThemeButton" type="Button" parent="WelcomeScreen/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "🌙 Tema Oscuro"
+
+[node name="HighContrastButton" type="Button" parent="WelcomeScreen/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "⚡ Alto Contraste"
+
+[node name="HSeparator2" type="HSeparator" parent="WelcomeScreen/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ImportButton" type="Button" parent="WelcomeScreen/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "📁 Importar Archivos Markdown"
+
+[node name="SettingsButton" type="Button" parent="WelcomeScreen/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "⚙️ Configuración"
+
+[node name="AboutButton" type="Button" parent="WelcomeScreen/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "ℹ️ Acerca de"
+
+[node name="ExitButton" type="Button" parent="WelcomeScreen/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "❌ Salir"
+
+[connection signal="pressed" from="WelcomeScreen/PanelContainer/VBoxContainer/LightThemeButton" to="." method="_on_light_theme_button_pressed"]
+[connection signal="pressed" from="WelcomeScreen/PanelContainer/VBoxContainer/DarkThemeButton" to="." method="_on_dark_theme_button_pressed"]
+[connection signal="pressed" from="WelcomeScreen/PanelContainer/VBoxContainer/HighContrastButton" to="." method="_on_contrast_theme_button_pressed"]
+[connection signal="pressed" from="WelcomeScreen/PanelContainer/VBoxContainer/ImportButton" to="." method="_on_import_button_pressed"]
+[connection signal="pressed" from="WelcomeScreen/PanelContainer/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="WelcomeScreen/PanelContainer/VBoxContainer/AboutButton" to="." method="_on_about_button_pressed"]
+[connection signal="pressed" from="WelcomeScreen/PanelContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
